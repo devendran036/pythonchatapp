@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<script>
+if(window.localStorage.getItem("username")==undefined){
+  window.location.href ="http://63efd8386b03.ngrok.io/login"
+}
+
+</script>
+<html lang="en">
+
+  <head>
+    <title>home</title>
+    
+<style>
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 15px;
+  
+
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1% 1%;
+  text-decoration: none;
+  font-size: 17px;
+  
+
+}
+.searchbox{
+  position: absolute;
+  right: 11%;
+  padding-left: 13%;
+
+}
+
+
+
+.searchbtn{
+  position: absolute;
+  right: 8%;
+  font-size: 80%;
+}
+.searchbox:hover{
+  
+}
+a.aclass:hover {
+  background-color: #ddd;
+  color: black;
+  width: 10%;
+  animation: 
+}
+
+input[type='search']{
+  border-radius: 15px;
+  overflow: none;
+  width: 1%;
+  /*height: 25px;*/
+
+}
+input[type='submit']{
+  border: 2px solid white;
+  background-color: grey;
+  color:blue;
+  border-radius: 15px;
+  width: 2.6%;
+}
+.loader {
+border: 16px solid #f3f3f3; /* Light grey */
+border-top: 16px solid #3498db; /* Blue */
+border-radius: 50%;
+width: 120px;
+height: 120px;
+animation: spin 2s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.target{
+   position :relative;
+  width :20px;
+  height:20px;
+  border-radius:50%;
+  background-color:red;
+  margin-left: 3%;
+  font-size: 19px;
+  margin-left: 50px;
+  top: -40px;
+  left :175px;
+  
+  
+  
+  }
+  .target1{
+   position :relative;
+  width :20px;
+  height:20px;
+  border-radius:50%;
+  background-color:green;
+  margin-left: 3%;
+  font-size: 19px;
+  margin-left: 50px;
+  top: -40px;
+  left :175px;
+  
+  
+  
+  }
+.column{
+
+  background-color: black;
+  margin-top: 18px;
+  
+  
+  height: 700px;
+  
+  border-top-left-radius: 15px;
+  border: 2px solid red;
+  left:36%;
+  width: 350px;
+}
+.rightcolumn{
+    position: absolute;
+    top: 144px;
+    background-color: black;
+    height: 700px;
+    border-top-left-radius: 15px;
+    border: 2px solid red;
+    left: 75%;
+    width: 350px;
+}
+.logout{
+  float:right;
+  margin-top:.8%;
+  margin-right: 40px;
+  width : 70px;
+  height :35px;
+  background-color:#333;
+}
+.mo:hover{
+  background-color: #ddd;
+  width : 5%;
+}
+
+
+.message_holder{
+  background-color: black;
+  margin-top: 18px;
+  margin-left: .2%;
+  height: 650px;
+  width: 1000px;
+  border-top-right-radius:  15px;
+  border: 2px solid red;
+  overflow:auto;
+}
+.message{
+  width:900px;
+   height:50px;
+   margin-top:667px;
+   margin-left:-1005px;
+}
+.sendbtn{
+ width: 98px;
+    height: 55px;
+    position: relative;
+    top: -60px;
+    left: -97px;
+  
+
+  
+}
+.userbtn{
+  background-color: black;
+  color: white;
+  border: 2px solid gold;
+  margin-left: 3%;
+  height: 55px;
+  width: 200px;
+  font-size: 19px;
+  margin-left: 50px;
+  margin-top: 10px;
+  border-radius: 2px;
+  cursor:pointer;
+}
+.userbtn :hover{
+
+}
+
+
+.container{
+  margin-top:1px;
+  
+  padding: 3%;
+  display: flex;
+}
+
+
+
+.search-container{
+  background-color: #fff;
+  margin-left: 39%;
+  margin-top: 6px;
+  height: 12px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.8;
+  box-sizing: 2px 2px 3px 0 rgba(155,155,155,.3),
+    -2px -2px 3px 0 rgba(60,6,36,.2)
+}
+.search-container:hover > .search-input{
+  width: 42.9%;
+}
+
+.search-container .search-input{
+  background: transition;
+  border: none;
+  outline: none;
+  width: 0%;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.8s;
+}
+
+.search-container .search-input .fas{
+  color: #5cbdbb;
+}
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 1;
+}
+@keyframes hoverShake {
+  0% {transform: skew(0deg,0deg);}
+  25% {transform: skew(5deg,5deg);}
+  75% {transform: skew(-5deg,-5deg);}
+  100% {transform: skew(0deg,0deg);}
+}
+
+/*.container {width: 75%;}
+.message_holder {width: 83%;}
+.search-container {width: 45%}*/
+
+@media only screen and (max-width: 768px) {
+  [class*=""] {
+    width: 100%;
+  }
+}
+.left{
+    float: left;
+    clear: both;
+
+}
+.right{
+    float: right;
+    clear: both;
+}
+.right01{
+    float: center;
+   
+}
+
+div.msg_bbl {
+         background-color: rgb(180,177,177);
+    width: 24%;
+    padding: 10px;
+    margin: 17px 2px;
+    border: 2px solid black;
+    border-radius: 10px;
+    
+
+      }
+.friendlist{
+/*stylesheet for homepage*/
+}
+.msgbox12{
+ 
+}
+</style>
+
+<body>
+<div class="topnav">
+      <a class="aclass" href="homepage.html">Home</a>
+      <a class="aclass" href="test.html">chat</a>
+      <a class="aclass" href="notification.html">notis</a>
+      <a class="aclass" href="#videos">videos</a>
+      <a class="aclass" href="http://127.0.0.1:5000/friendrequest">Friend requests</a>
+      
+      <a ><input class="searchbox aclass" type="search" placeholder="   Add More" value=""><input class="searchbtn aclass" type="button" name="search" value="Go"></a>
+      <button type="button" onclick='logout()'class="logout aclass"> Logout</button>
+      <a class="members"></a>
+    </div>
+
+  
+
+<div class='container'>
+  
+      <div class="column">
+        <div class="search-container">
+          <input type="text" name="search" class="search-input" placeholder="search...">
+          <a href="#" class="search-btn">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+      
+    <div class='rightcolumn'></div>  
+    </div>
+    
+    <div class="message_holder" id='dev01'>
+    
+
+    </div>
+    <form action="" method="POST">
+         
+         
+          <div style="padding-top: 5px;"></div>
+          <input name="msg" type="text" class="message" placeholder="Messages">
+          <div style="padding-top: 5px;"></div>
+          <button type="submit" class="sendbtn"><span class="glyphicon glyphicon-send"></span> Send</button>
+            </form>
+    
+         
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
+    
+    <script>
+    
+    var limit=0
+    var limit01=0
+    var limit03=1
+    
+     
+      
+    
+    var p=window.localStorage.getItem("username")
+
+    function cange(c){
+         var b=document.getElementById(c)
+       var e=b.value
+        userselected(e,c)
+      }
+    function add(d1){
+       var b=document.getElementById(d1)
+      
+      var e1=b.value
+      b.parentNode.removeChild(b)
+      friendreq(e1,d1)
+    }
+    
+     
+     
+   
+
+
+     
+
+      var socket = io.connect( 'http://' + document.domain + ':' + location.port)
+      // broadcast a message
+    
+      
+     
+      
+      socket.on( 'connect', function() {
+       
+        
+     
+        socket.emit( 'my event', {
+          data: p
+          
+         
+         } );
+         socket.emit( 'useronline', {
+      online:p
+         })
+         socket.emit('users',{
+           online : p
+         })
+         socket.emit('userlo',{
+           online : p
+         })
+         socket.emit('online',{
+           online : p
+         })
+         
+ });
+   function logout(){
+     window.localStorage.clear()
+      
+     window.location.href ="http://63efd8386b03.ngrok.io/login"
+
+   }
+        
+
+
+
+
+var form = $( 'form' ).on( 'submit', function( e ) {
+          e.preventDefault()
+          let user_name = p
+          let user_input =$( 'input.message' ).val()
+          socket.emit( 'my event', {
+          user_name : user_name,
+          message : user_input,
+          user_selected :  window.userselect
+          } )
+          // empty the input field
+         $( 'input.message' ).val( '' ).focus()
+        } )
+      
+      function userselected(a,dis){
+        window.userselect=a
+        socket.emit( 'userselected', {
+        user_selected:a,
+        user_name : p
+})
+      }
+      function friendreq(username01,username){
+        socket.emit('friendrequest',{
+          friendreq:username01,
+          username:p
+
+        })
+
+      }
+socket.on('friendadd',function(dev){
+  
+
+  user=dev.users
+  
+  length01=user.length
+  if (limit03==1){
+  for(i=0;i<length01;i++){
+    
+
+  
+  user[i]=user[i].replace("'",'')
+  user[i]=user[i].replace("'",'')
+  if (user[i]!=p){
+  $('div.rightcolumn').append(`<input type='button'  class='userbtn'placeholder='${user[i]}' onclick=add('${user[i]}') id='${user[i]}' value='${user[i]}'><br>`)
+  }
+  }
+  }
+  limit03=2
+  
+   
+  
+  
+   
+})
+socket.on('disconnect', function(dev){
+  
+  socket.emit('removed',p)
+})
+socket.on('display',function(changed01){
+ 
+
+  
+ 
+  username01=changed01.users
+ 
+  if(limit==0){
+  for(var  i=0;i<username01.length;i++){
+    if(username01[i] !=p){
+      
+ 
+               
+              
+              $('div.column').append(`<input type='button' class='userbtn' placeholder='${username01[i]}' onclick=cange('${username01[i]}') id='${username01[i]}' value='${username01[i]}'><div class='target'  id= ${username01[i]+'01'} value="done"></div><br>`)          
+          
+             
+             }
+             
+          }
+  }
+  limit=1
+  
+ 
+})
+socket.on('removeuser',function(dev){
+  u=dev.userremove
+  document.getElementById(u+'01').classList.remove('target1')
+  document.getElementById(u+'01').classList.add('target')
+ 
+
+})
+
+      
+socket.on('incoming', function( changed ){
+  var li=document.createElement('div')
+  li.className='loader'
+  li.innerHTML=''
+  document.body.appendChild(li) 
+
+   
+  if (changed.user_name==p){
+  username23=changed.username
+  username1=changed.username01
+  message=changed.messages
+  message=message.replace('[','')
+  message=message.replace(']','')
+  message=message.split(',')
+  username23=username23.replace('[','')
+  username23=username23.replace(']','')
+  username23=username23.split(',')
+  username1=username1.replace('[','')
+  username1=username1.replace(']','')
+  username1=username1.split(',')
+  var b= changed.lenght;
+ 
+ 
+  
+  $('div.msg_bbl').remove()
+  
+ 
+
+
+ 
+  var i=0
+  while(i<b){
+    message[i]=message[i].replace("'",'')
+    message[i]=message[i].replace("'",'')
+    username23[i]=username23[i].replace("'",'')
+    username23[i]=username23[i].replace("'",'')
+    username1[i]=username1[i].replace("'",'')
+    username1[i]=username1[i].replace("'",'')
+    username1[i]=username1[i].trim()
+    if((username23[i].trim()==changed.user_name && username1[i]==window.userselect) || (username1[i]==changed.user_name && username23[i].trim()==window.userselect)){
+      if(username23[i].trim()==p){
+        
+        $('div.message_holder').append('<div class="msg_bbl right"><b style="color: #000">'+ username23[i]+'</b>'+message[i]+'</div>')
+
+      }
+      else{
+          $('div.message_holder').append('<div class="msg_bbl left"><b style="color: #000">'+ username23[i]+'</b>'+message[i]+'</div>')
+
+      }
+      
+
+       
+       
+}
+        
+i+=1
+}
+
+
+var number=document.getElementById('dev01')
+number.scrollTop=number.scrollHeight;
+
+
+}
+$('div.loader').remove()
+})
+
+ 
+socket.on('usersonline',function(dev){
+  
+  var tr=document.createElement('div')
+  tr.className='users01'
+  tr.innerHTML=''
+  us=dev.users
+  us1=dev.users2
+  onlineu=dev.on
+  console.log(us)
+  
+  for(var i=0;i<us.length;i++){
+    document.getElementById(us[i])
+      if(us[i] != 'null' && p==onlineu){
+        
+      document.getElementById(us[i]+'01').classList.remove('target')
+      document.getElementById(us[i]+'01').classList.add('target1')
+     
+     
+      }
+      else{
+       
+        if(us1[i] !='null'){
+             document.getElementById(us1[i]+'01').classList.remove('target')
+      document.getElementById(us1[i]+'01').classList.add('target1')
+            
+    
+        }
+      }
+    
+    
+    
+  }
+document.body.appendChild(tr)     
+})
+// capture message
+socket.on( 'my response', function( msg )  {
+if(msg.user_name ==  p && (msg.user_selected==window.userselect)){
+ 
+  $( 'h1' ).remove()
+  
+  $( 'div.message_holder' ).append( '<div class="msg_bbl right"><b style="color: #000">'+msg.user_name+'</b> '+  msg.message+'</div>' )
+ 
+  msg.user_name=''
+  var number=document.getElementById('dev01')
+  number.scrollTop=number.scrollHeight;
+  
+}
+else if(msg.user_selected== p && msg.user_name==window.userselect){
+  
+  $( 'h1' ).remove()
+  $( 'div.message_holder' ).append( '<div class="msg_bbl left"><b style="color: #000">'+msg.user_name+'</b> '+  msg.message+'</div>' )
+  
+  msg.user_selected=''
+  var number=document.getElementById('dev01')
+  number.scrollTop=number.scrollHeight;
+  
+  
+}
+else if(msg.user_selected== p){
+
+}
+
+})
+var back = false;
+back = true; //Somewhere, the condition is set to true
+window.onbeforeunload = function (e) {
+    if(back == true){
+     socket.emit('removed',{
+       'online':p
+     })
+
+    
+        
+    }
+        
+
+    
+      }
+
+
+      
+
+
+</script>
+</body>
+</html>

